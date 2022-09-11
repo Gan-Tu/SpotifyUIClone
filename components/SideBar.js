@@ -6,7 +6,7 @@ function MenuItem({ Icon, Label, isActive }) {
   return (
     <div
       className={clsx(
-        "flex items-center space-x-3 cursor-pointer hover:text-white font-medium",
+        "flex items-center space-x-3 cursor-pointer hover:text-white font-medium text-sm",
         isActive ? "text-white" : "text-gray-400"
       )}
     >
