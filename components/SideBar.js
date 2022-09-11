@@ -6,7 +6,7 @@ function MenuItem({ Icon, Label, isActive }) {
   return (
     <div
       className={clsx(
-        "flex items-center space-x-3 cursor-pointer hover:text-white",
+        "flex items-center space-x-3 cursor-pointer hover:text-white font-medium",
         isActive ? "text-white" : "text-gray-400"
       )}
     >
@@ -16,9 +16,9 @@ function MenuItem({ Icon, Label, isActive }) {
   );
 }
 
-function SideBar() {
+export default function SideBar({ playlists }) {
   return (
-    <div className="col-span-1 bg-black h-screen px-5 py-5 rounded-r-md">
+    <div className="col-span-1 bg-black min-h-screen px-5 py-5 rounded-r-md">
       <div className="text-white flex flex-col space-y-4 p-4">
         <MenuItem Icon={HomeIcon} Label="Home" isActive />
         <MenuItem Icon={SearchIcon} Label="Search" />
@@ -40,8 +40,17 @@ function SideBar() {
           Label="Liked Songs"
         />
       </div>
+      <div className="border-b m-2 border-gray-700"></div>
+      <div className="flex flex-col space-y-3 text-sm px-4 py-2">
+        {playlists?.map((item) => (
+          <p
+            className="hover:text-white text-gray-400 cursor-pointer"
+            key={item}
+          >
+            {item}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
-
-export default SideBar;

@@ -1,6 +1,8 @@
 import Head from "next/head";
 import SideBar from "../components/SideBar";
-export default function Home() {
+import { getPlaylists } from "../utils/fakeData";
+
+export default function Home({ playlists }) {
   return (
     <div className="">
       <Head>
@@ -10,10 +12,18 @@ export default function Home() {
       </Head>
 
       <div className="grid grid-cols-5">
-        <SideBar />
+        <SideBar playlists={playlists} />
         <div></div>
         <div></div>
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      playlists: getPlaylists()
+    }
+  };
 }
