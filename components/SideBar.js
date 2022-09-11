@@ -6,7 +6,7 @@ function MenuItem({ Icon, Label, isActive }) {
   return (
     <div
       className={clsx(
-        "flex items-center space-x-3 cursor-pointer hover:text-white font-medium text-sm",
+        "flex items-center space-x-3 cursor-pointer hover:text-white font-medium text-sm transparent-selection",
         isActive ? "text-white" : "text-gray-400"
       )}
     >
@@ -44,7 +44,7 @@ export default function SideBar({ playlists }) {
       <div className="flex flex-col space-y-3 text-sm px-4 py-2">
         {playlists?.map((item) => (
           <p
-            className="hover:text-white text-gray-400 cursor-pointer"
+            className="hover:text-white text-gray-400 cursor-pointer transparent-selection"
             key={item}
           >
             {item}
