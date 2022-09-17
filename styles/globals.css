@@ -4,6 +4,6 @@
 
 @layer utilities {
   .transparent-selection {
-    @apply selection:bg-transparent;
+    @apply selection:bg-transparent select-none;
   }
 }

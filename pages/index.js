@@ -1,4 +1,5 @@
 import Head from "next/head";
+import BottomControl from "../components/BottomControl";
 import SideBar from "../components/SideBar";
 import { getPlaylists } from "../utils/fakeData";
 
@@ -16,6 +17,8 @@ export default function Home({ playlists }) {
         <div></div>
         <div></div>
       </div>
+
+      <BottomControl />
     </div>
   );
 }
