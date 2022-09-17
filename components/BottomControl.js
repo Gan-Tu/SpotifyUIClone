@@ -11,7 +11,7 @@ import {
 
 export default function BottomControl() {
   return (
-    <div className="sticky bottom-0 bg-[#181818] px-3 py-9 text-white">
+    <div className="sticky bottom-0 bg-[#181818] px-3 py-9 text-white border-t border-gray-800">
       <div className="grid grid-cols-5">
         <div className="flex space-x-8 col-span-1">
           <div>
