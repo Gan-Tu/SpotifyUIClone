@@ -13,7 +13,7 @@ export default function Home({ playlists }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid grid-cols-5 bg-[#181818]">
+      <div className="grid grid-cols-5 bg-[#181818] overflow-hidden">
         <SideBar playlists={playlists} />
         <MainSection />
       </div>

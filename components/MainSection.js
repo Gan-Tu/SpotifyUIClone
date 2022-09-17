@@ -6,7 +6,7 @@ import AvatarImg from "../images/avatar.png";
 
 export default function MainSection() {
   return (
-    <div className="col-span-4 py-5 px-8">
+    <div className="col-span-4 py-5 px-8 bg-gradient-to-b from-[#a5356d] via-[#181818] to-[#181818] overflow-hidden">
       <div className="flex justify-between items-center">
         <div className="flex space-x-4">
           <div className="flex items-center text-gray-400 hover:text-white cursor-pointer bg-black opacity-80 rounded-full p-2 transparent-selection">
