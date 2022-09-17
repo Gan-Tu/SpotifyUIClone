@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import Image from "next/image";
 import { HomeIcon, StackIcon, SearchIcon, PlusIcon, HeartIcon } from "./Icons";
 
 function MenuItem({ Icon, Label, isActive }) {
@@ -20,6 +21,15 @@ export default function SideBar({ playlists }) {
   return (
     <div className="col-span-1 bg-black min-h-screen px-5 py-5 rounded-r-md">
       <div className="text-white flex flex-col space-y-4 p-4">
+        <div className="relative h-10 cursor-pointer mb-3">
+          <Image
+            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
+            alt=""
+            layout="fill"
+            objectPosition="left"
+            objectFit="contain"
+          />
+        </div>
         <MenuItem Icon={HomeIcon} Label="Home" isActive />
         <MenuItem Icon={SearchIcon} Label="Search" />
         <MenuItem
