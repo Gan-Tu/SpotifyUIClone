@@ -28,7 +28,7 @@ function HorizontalAlbumCard({ img, label }) {
   );
 }
 
-function VerticalAlbumCard({ img, label }) {
+function VerticalAlbumCard({ img, label, snippet }) {
   return (
     <div className="rounded-lg bg-stone-800 hover:bg-neutral-700 group flex flex-col group cursor-pointer py-4">
       <div class="relative flex w-40 h-40 mx-auto shadow-lg">
@@ -48,16 +48,13 @@ function VerticalAlbumCard({ img, label }) {
         <p>{label}</p>
       </div>
       <div className="mx-4 text-xs transparent-selection font-light text-[#bdb9b9] line-clamp-2">
-        <p>
-          Nulla faucibus congue purus ac pretium. Ut eleifend, risus nec
-          sollicitudin suscipit, erat augue rhoncus elit
-        </p>
+        <p>{snippet}</p>
       </div>
     </div>
   );
 }
 
-export default function MainSection() {
+export default function MainSection({ highlights, albums }) {
   return (
     <div className="col-span-4 py-5 px-8 bg-gradient-to-b from-[#662043] via-[#181818] to-[#181818] overflow-hidden min-h-screen">
       {/* Top Bar */}
@@ -96,119 +93,33 @@ export default function MainSection() {
           Good afternoon
         </h1>
         <div className="grid grid-cols-3 gap-8">
-          <HorizontalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d90725e204c8baf1d8042fc5"
-            label="Discover Weekly"
-          />
-          <HorizontalAlbumCard
-            img="https://i.scdn.co/image/ab67706c0000da844b0b8124f985c9d89ae0fd1c"
-            label="Lofi Fruits Music"
-          />
-          <HorizontalAlbumCard
-            img="https://i.scdn.co/image/ab67616d0000b2736d1ae09f3ba9aadf91fdb0e7"
-            label="Questions (Remix Pack)"
-          />
-          <HorizontalAlbumCard
-            img="https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36"
-            label="Justin Bieber"
-          />
-          <HorizontalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d5f2eb7b9d2c5af9c97884da"
-            label="Hot Hits USA"
-          />
-          <HorizontalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002a0fef2076efa27870e02f958"
-            label="Today's Top Hits"
-          />
+          {highlights?.map((item) => (
+            <HorizontalAlbumCard
+              key={item.img}
+              img={item.img}
+              label={item.label}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Jump Back In */}
-      <div className="pt-10">
-        <h1 className="text-white font-semibold text-xl pb-4">Jump Back In</h1>
-        <div className="grid grid-cols-5 gap-8">
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d90725e204c8baf1d8042fc5"
-            label="Discover Weekly"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706c0000da844b0b8124f985c9d89ae0fd1c"
-            label="Lofi Fruits Music"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67616d0000b2736d1ae09f3ba9aadf91fdb0e7"
-            label="Questions (Remix Pack)"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36"
-            label="Justin Bieber"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d5f2eb7b9d2c5af9c97884da"
-            label="Hot Hits USA"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d90725e204c8baf1d8042fc5"
-            label="Discover Weekly"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706c0000da844b0b8124f985c9d89ae0fd1c"
-            label="Lofi Fruits Music"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67616d0000b2736d1ae09f3ba9aadf91fdb0e7"
-            label="Questions (Remix Pack)"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36"
-            label="Justin Bieber"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d5f2eb7b9d2c5af9c97884da"
-            label="Hot Hits USA"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d90725e204c8baf1d8042fc5"
-            label="Discover Weekly"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706c0000da844b0b8124f985c9d89ae0fd1c"
-            label="Lofi Fruits Music"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67616d0000b2736d1ae09f3ba9aadf91fdb0e7"
-            label="Questions (Remix Pack)"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36"
-            label="Justin Bieber"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d5f2eb7b9d2c5af9c97884da"
-            label="Hot Hits USA"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d90725e204c8baf1d8042fc5"
-            label="Discover Weekly"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706c0000da844b0b8124f985c9d89ae0fd1c"
-            label="Lofi Fruits Music"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67616d0000b2736d1ae09f3ba9aadf91fdb0e7"
-            label="Questions (Remix Pack)"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36"
-            label="Justin Bieber"
-          />
-          <VerticalAlbumCard
-            img="https://i.scdn.co/image/ab67706f00000002d5f2eb7b9d2c5af9c97884da"
-            label="Hot Hits USA"
-          />
+      {albums?.map((section) => (
+        <div className="pt-10">
+          <h1 className="text-white font-semibold text-xl pb-4">
+            {section.title}
+          </h1>
+          <div className="grid grid-cols-5 gap-8">
+            {section.items?.map((item) => (
+              <VerticalAlbumCard
+                key={item.img}
+                img={item.img}
+                label={item.label}
+                snippet={item.snippet}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
