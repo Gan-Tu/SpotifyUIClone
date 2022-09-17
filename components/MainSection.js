@@ -104,7 +104,7 @@ export default function MainSection({ highlights, albums }) {
       </div>
 
       {albums?.map((section) => (
-        <div className="pt-10">
+        <div className="pt-10" key={section.title}>
           <h1 className="text-white font-semibold text-xl pb-4">
             {section.title}
           </h1>
